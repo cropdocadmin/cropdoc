@@ -42,11 +42,12 @@ app.use((req, res) => {
   res.status(404).json({ success: false, message: 'Resource not found' });
 });
 
-// Global Error Handler (Prevents stack trace leaks to client)
+// Global Error Handler (Prevents stack trace leaks to client in prod, logs error on server)
 app.use((err, req, res, next) => {
+  console.error('🔴 Express API Error:', err);
   res.status(err.status || 500).json({
     success: false,
-    message: 'An internal server error occurred.'
+    message: err.message || 'An internal server error occurred.'
   });
 });
 
@@ -54,8 +55,8 @@ app.use((err, req, res, next) => {
 mongoose.connect(MONGODB_URI)
   .then(() => {
     console.log('✅ Connected securely to MongoDB database');
-    app.listen(PORT, () => {
-      console.log(`🚀 Auth Server running on port ${PORT}`);
+    app.listen(PORT, '0.0.0.0', () => {
+      console.log(`🚀 Auth Server running securely on 0.0.0.0:${PORT}`);
     });
   })
   .catch((err) => {

@@ -46,7 +46,7 @@ const UserSchema = new mongoose.Schema({
 // Ensure at least email or phone is provided
 UserSchema.pre('validate', function() {
   if (!this.email && !this.phone) {
-    throw new Error('Either Email or Mobile Number is required');
+    this.invalidate('email', 'Either Email or Mobile Number is required');
   }
 });
 

@@ -1,5 +1,5 @@
 import React from 'react';
-import { ArrowRight, LogIn, CheckCircle2, Sparkles, ShieldCheck, Clock } from 'lucide-react';
+import { ArrowRight, LogIn, CheckCircle2, Sparkles, ShieldCheck, Clock, ExternalLink } from 'lucide-react';
 import { useLanguage } from '../context/LanguageContext';
 import { useAuth } from '../context/AuthContext';
 import { getRemainingDays } from '../utils/dateUtils';
@@ -59,39 +59,43 @@ export default function SimpleHero({ onOpenLogin, onOpenPayment }) {
           {t.hero.desc}
         </p>
 
-        {/* Action Buttons */}
+        {/* Action Buttons with Direct CropDOC App Redirect */}
         <div className="flex flex-col sm:flex-row items-center justify-center gap-4 pt-4">
+          
+          {/* Direct Redirect to cropdoc-app.ai.studio */}
+          <a
+            href="https://cropdoc-app.ai.studio"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="w-full sm:w-auto inline-flex items-center justify-center gap-2.5 bg-gradient-to-r from-emerald-600 to-teal-700 hover:from-emerald-700 hover:to-teal-800 text-white font-extrabold text-base px-8 py-4 rounded-xl shadow-xl hover:shadow-emerald-600/30 transition-all transform hover:-translate-y-0.5 active:scale-95 cursor-pointer"
+          >
+            <span>{t.hero.appRedirectCta}</span>
+            <ExternalLink className="w-5 h-5 text-emerald-200" />
+          </a>
+
           {!user ? (
             <button
               onClick={onOpenLogin}
-              className="w-full sm:w-auto inline-flex items-center justify-center gap-2.5 bg-emerald-600 hover:bg-emerald-700 text-white font-bold text-base px-8 py-4 rounded-xl shadow-lg hover:shadow-emerald-600/30 transition-all transform hover:-translate-y-0.5 active:scale-95 cursor-pointer"
+              className="w-full sm:w-auto inline-flex items-center justify-center gap-2 bg-white hover:bg-slate-50 text-slate-700 font-semibold text-base px-6 py-4 rounded-xl border border-slate-300 shadow-xs transition-all cursor-pointer"
             >
-              <LogIn className="w-5 h-5" />
+              <LogIn className="w-5 h-5 text-emerald-600" />
               <span>{t.hero.loginCta}</span>
-              <ArrowRight className="w-5 h-5" />
             </button>
           ) : user.plan === 'free' ? (
             <button
               onClick={onOpenPayment}
-              className="w-full sm:w-auto inline-flex items-center justify-center gap-2.5 bg-gradient-to-r from-emerald-600 to-teal-700 hover:from-emerald-700 hover:to-teal-800 text-white font-extrabold text-base px-8 py-4 rounded-xl shadow-xl hover:shadow-emerald-600/30 transition-all transform hover:-translate-y-0.5 active:scale-95 cursor-pointer"
+              className="w-full sm:w-auto inline-flex items-center justify-center gap-2 bg-amber-500 hover:bg-amber-400 text-slate-950 font-extrabold text-base px-6 py-4 rounded-xl shadow-lg transition-all cursor-pointer"
             >
-              <Sparkles className="w-5 h-5 text-amber-300 fill-amber-300" />
-              <span>Upgrade to Premium (₹149/Year)</span>
-              <ArrowRight className="w-5 h-5" />
+              <Sparkles className="w-5 h-5 fill-slate-950" />
+              <span>Upgrade to Premium (₹149/Yr)</span>
             </button>
           ) : (
-            <div className="inline-flex items-center justify-center gap-2.5 bg-emerald-950 text-emerald-300 font-extrabold text-base px-8 py-4 rounded-xl border border-emerald-500 shadow-md">
+            <div className="inline-flex items-center justify-center gap-2 bg-emerald-950 text-emerald-300 font-extrabold text-base px-6 py-4 rounded-xl border border-emerald-500 shadow-md">
               <ShieldCheck className="w-5 h-5 text-emerald-400" />
-              <span>Full Premium Protection Enabled ({remainingDays} Days Active)</span>
+              <span>Full Premium Active ({remainingDays} Days)</span>
             </div>
           )}
 
-          <a
-            href="#workflow"
-            className="w-full sm:w-auto inline-flex items-center justify-center gap-2 bg-white hover:bg-slate-50 text-slate-700 font-semibold text-base px-6 py-4 rounded-xl border border-slate-300 shadow-xs transition-all"
-          >
-            <span>{t.hero.workflowCta}</span>
-          </a>
         </div>
 
         {/* Core Value Props */}

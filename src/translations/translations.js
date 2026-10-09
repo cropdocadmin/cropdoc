@@ -5,7 +5,8 @@ export const translations = {
       workflow: "3-Step Workflow",
       pricing: "Subscription Plans",
       why: "Why CropDOC",
-      login: "Login / Register"
+      login: "Login / Register",
+      appRedirect: "Launch CropDOC App 🚀"
     },
     hero: {
       badge: "AI Agricultural Pathology Platform",
@@ -15,6 +16,7 @@ export const translations = {
       desc: "CropDOC is an AI-powered mobile application designed to detect crop diseases instantly using a smartphone camera. By converting any phone into a digital plant doctor, CropDOC helps farmers prevent severe yield losses through early detection and eco-friendly treatment advice.",
       loginCta: "Login / Access Portal",
       workflowCta: "See 3-Step Workflow ↓",
+      appRedirectCta: "Open CropDOC App (ai.studio) ↗",
       prop1: "Instant AI Scan",
       prop2: "24/7 AI Crop Protection",
       prop3: "Affordable & Easy to Use"
@@ -64,7 +66,8 @@ export const translations = {
       step3Label: "[ Output: Treatment & Cure Plan ]",
       bannerTitle: "Ready to Protect Your Crops?",
       bannerSub: "Log in or sign up for free to access the CropDOC digital agriculture platform.",
-      bannerCta: "Access Login Portal"
+      bannerCta: "Access Login Portal",
+      appRedirectCta: "Launch CropDOC App (ai.studio) ↗"
     },
     pricing: {
       badge: "Subscription Pricing",
@@ -118,6 +121,7 @@ export const translations = {
       workflow: "Workflow",
       pricing: "Pricing",
       portal: "Login Portal",
+      appRedirect: "CropDOC App (ai.studio)",
       rights: "CropDOC AI Inc. All rights reserved."
     }
   },
@@ -128,7 +132,8 @@ export const translations = {
       workflow: "3-चरण कार्यप्रणाली",
       pricing: "सदस्यता योजनाएं",
       why: "क्रॉपडॉक क्यों?",
-      login: "लॉगिन / पंजीकरण"
+      login: "लॉगिन / पंजीकरण",
+      appRedirect: "क्रॉपडॉक ऐप खोलें 🚀"
     },
     hero: {
       badge: "एआई कृषि रोग निदान प्लेटफॉर्म",
@@ -138,6 +143,7 @@ export const translations = {
       desc: "क्रॉपडॉक एक एआई-संचालित मोबाइल एप्लिकेशन है जिसे स्मार्टफोन कैमरे का उपयोग करके फसलों के रोगों का तुरंत पता लगाने के लिए डिज़ाइन किया गया है। किसी भी फोन को डिजिटल फसल डॉक्टर में बदलकर, क्रॉपडॉक समय पर रोग पहचान और जैविक उपचार सलाह के माध्यम से किसानों को भारी नुकसान से बचाता है।",
       loginCta: "लॉगिन / पोर्टल खोलें",
       workflowCta: "3-चरण कार्यप्रणाली देखें ↓",
+      appRedirectCta: "क्रॉपडॉक ऐप खोलें (ai.studio) ↗",
       prop1: "त्वरित एआई स्कैन",
       prop2: "24/7 एआई फसल सुरक्षा",
       prop3: "किफायती और उपयोग में आसान"
@@ -187,7 +193,8 @@ export const translations = {
       step3Label: "[ आउटपुट: उपचार और निवारण योजना ]",
       bannerTitle: "क्या आप अपनी फसलों की रक्षा के लिए तैयार हैं?",
       bannerSub: "क्रॉपडॉक डिजिटल कृषि प्लेटफॉर्म तक पहुंचने के लिए मुफ्त में लॉगिन या साइन अप करें।",
-      bannerCta: "लॉगिन पोर्टल खोलें"
+      bannerCta: "लॉगिन पोर्टल खोलें",
+      appRedirectCta: "क्रॉपडॉक ऐप खोलें (ai.studio) ↗"
     },
     pricing: {
       badge: "सदस्यता दरें",
@@ -241,6 +248,7 @@ export const translations = {
       workflow: "कार्यप्रणाली",
       pricing: "मूल्य निर्धारण",
       portal: "लॉगिन पोर्टल",
+      appRedirect: "क्रॉपडॉक ऐप (ai.studio)",
       rights: "क्रॉपडॉक एआई इंक. सर्वाधिकार सुरक्षित।"
     }
   },
@@ -251,7 +259,8 @@ export const translations = {
       workflow: "३-टप्प्यांची कार्यपद्धती",
       pricing: "योजना व दर",
       why: "क्रॉपडॉक का?",
-      login: "लॉगिन / नोंदणी"
+      login: "लॉगिन / नोंदणी",
+      appRedirect: "क्रॉपडॉक ॲप उघडा 🚀"
     },
     hero: {
       badge: "एआय कृषी रोग निदान प्लॅटफॉर्म",
@@ -261,6 +270,7 @@ export const translations = {
       desc: "क्रॉपडॉक हे एक एआय-आधारित मोबाईल ॲप्लिकेशन आहे जे स्मार्टफोन कॅमेऱ्याचा वापर करून पिकांवरील रोगांचे त्वरित निदान करते. कोणत्याही फोनला डिजिटल पीक डॉक्टरमध्ये बदलून, क्रॉपडॉक वेळेवर रोग ओळख आणि सेंद्रिय उपचारांच्या सल्ल्याद्वारे शेतकऱ्यांचे मोठे नुकसान वाचवते.",
       loginCta: "लॉगिन / पोर्टल उघडा",
       workflowCta: "३-टप्प्यांची कार्यपद्धती पहा ↓",
+      appRedirectCta: "क्रॉपडॉक ॲप उघडा (ai.studio) ↗",
       prop1: "त्वरित एआय स्कॅन",
       prop2: "२४/७ एआय पीक संरक्षण",
       prop3: "परवडणारे आणि वापरण्यास सोपे"
@@ -310,7 +320,8 @@ export const translations = {
       step3Label: "[ आऊटपुट: उपचार व उपाय योजना ]",
       bannerTitle: "पिकांचे संरक्षण करण्यास तयार आहात?",
       bannerSub: "क्रॉपडॉक डिजिटल कृषी प्लॅटफॉर्मचा वापर करण्यासाठी विनामूल्य लॉगिन किंवा नोंदणी करा.",
-      bannerCta: "लॉगिन पोर्टल उघडा"
+      bannerCta: "लॉगिन पोर्टल उघडा",
+      appRedirectCta: "क्रॉपडॉक ॲप उघडा (ai.studio) ↗"
     },
     pricing: {
       badge: "सदस्यता दर",
@@ -364,6 +375,7 @@ export const translations = {
       workflow: "कार्यपद्धती",
       pricing: "दर व योजना",
       portal: "लॉगिन पोर्टल",
+      appRedirect: "क्रॉपडॉक ॲप (ai.studio)",
       rights: "क्रॉपडॉक एआय इंक. सर्व हक्क राखीव."
     }
   },
@@ -374,7 +386,8 @@ export const translations = {
       workflow: "3-దశల విధానం",
       pricing: "సభ్యత్వ ప్రణాళికలు",
       why: "క్రాప్‌డాక్ ఎందుకు?",
-      login: "లాగిన్ / నమోదు"
+      login: "లాగిన్ / నమోదు",
+      appRedirect: "క్రాప్‌డాక్ యాప్ తెరవండి 🚀"
     },
     hero: {
       badge: "AI వ్యవసాయ వ్యాధి నిర్ధారణ వేదిక",
@@ -384,6 +397,7 @@ export const translations = {
       desc: "క్రాప్‌డాక్ అనేది స్మార్ట్‌ఫోన్ కెమెరాను ఉపయోగించి పంట వ్యాధులను తక్షణమే గుర్తించడానికి రూపొందించబడిన AI-ఆధారిత మొబైల్ యాప్. ఏదైనా ఫోన్‌ను డిజిటల్ పంట డాక్టర్‌గా మార్చడం ద్వారా, సకాలంలో వ్యాధి గుర్తింపు మరియు సేంద్రీయ చికిత్స సలహాల ద్వారా రైతులకు భారీ నష్టాలు కలగకుండా క్రాప్‌డాక్ సహాయపడుతుంది.",
       loginCta: "లాగిన్ / పోర్టల్ తెరవండి",
       workflowCta: "3-దశల విధానం చూడండి ↓",
+      appRedirectCta: "క్రాప్‌డాక్ యాప్ తెరవండి (ai.studio) ↗",
       prop1: "తక్షణ AI స్కాన్",
       prop2: "24/7 AI పంట రక్షణ",
       prop3: "అందుబాటు ధరలో సులభంగా వాడవచ్చు"
@@ -433,7 +447,8 @@ export const translations = {
       step3Label: "[ అవుట్‌పుట్: చికిత్స నివారణ ప్రణాళిక ]",
       bannerTitle: "మీ పంటలను కాపాడుకోవడానికి సిద్ధంగా ఉన్నారా?",
       bannerSub: "క్రాప్‌డాక్ డిజిటల్ అగ్రికల్చర్ ప్లాట్‌ఫారమ్‌ను ఉపయోగించడానికి ఉచితంగా లాగిన్ లేదా సైన్ అప్ చేయండి.",
-      bannerCta: "లాగిన్ పోర్టల్ తెరువు"
+      bannerCta: "లాగిన్ పోర్టల్ తెరువు",
+      appRedirectCta: "క్రాప్‌డాక్ యాప్ తెరవండి (ai.studio) ↗"
     },
     pricing: {
       badge: "సభ్యత్వ ధరలు",
@@ -487,6 +502,7 @@ export const translations = {
       workflow: "విధానం",
       pricing: "ధరల ప్లాన్‌లు",
       portal: "లాగిన్ పోర్టల్",
+      appRedirect: "క్రాప్‌డాక్ యాప్ (ai.studio)",
       rights: "క్రాప్‌డాక్ AI ఇన్స్. సర్వహక్కులు ప్రత్యేకించబడ్డాయి."
     }
   },
@@ -497,7 +513,8 @@ export const translations = {
       workflow: "Flujo en 3 Pasos",
       pricing: "Planes de Suscripción",
       why: "¿Por qué CropDOC?",
-      login: "Iniciar Sesión / Registro"
+      login: "Iniciar Sesión / Registro",
+      appRedirect: "Abrir Aplicación CropDOC 🚀"
     },
     hero: {
       badge: "Plataforma IA de Patología Agrícola",
@@ -507,6 +524,7 @@ export const translations = {
       desc: "CropDOC es una aplicación móvil impulsada por IA diseñada para detectar enfermedades en los cultivos de forma instantánea usando la cámara del teléfono. Al transformar cualquier teléfono en un doctor digital de plantas, CropDOC ayuda a los agricultores a prevenir pérdidas severas mediante detección temprana y consejos ecológicos.",
       loginCta: "Iniciar Sesión / Portal",
       workflowCta: "Ver Flujo en 3 Pasos ↓",
+      appRedirectCta: "Abrir Aplicación CropDOC (ai.studio) ↗",
       prop1: "Escaneo IA Instantáneo",
       prop2: "Protección Agrícola IA 24/7",
       prop3: "Económico y Fácil de Usar"
@@ -556,7 +574,8 @@ export const translations = {
       step3Label: "[ Salida: Plan de Curación ]",
       bannerTitle: "¿Listo para Proteger tus Cultivos?",
       bannerSub: "Inicia sesión o regístrate gratis para acceder a la plataforma agrícola digital CropDOC.",
-      bannerCta: "Acceder al Portal de Inicio"
+      bannerCta: "Acceder al Portal de Inicio",
+      appRedirectCta: "Abrir Aplicación CropDOC (ai.studio) ↗"
     },
     pricing: {
       badge: "Planes de Suscripción",
@@ -610,6 +629,7 @@ export const translations = {
       workflow: "Flujo de Trabajo",
       pricing: "Precios",
       portal: "Portal de Inicio",
+      appRedirect: "Aplicación CropDOC (ai.studio)",
       rights: "CropDOC AI Inc. Todos los derechos reservados."
     }
   }
