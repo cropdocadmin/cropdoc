@@ -4,13 +4,6 @@ import mongoose from 'mongoose';
 import cors from 'cors';
 import authRoutes from './routes/auth.js';
 
-// Verify required environment variables on startup
-const MONGODB_URI = process.env.MONGODB_URI;
-if (!MONGODB_URI) {
-  console.error('FATAL SECURITY CONFIGURATION ERROR: MONGODB_URI environment variable is missing.');
-  process.exit(1);
-}
-
 const PORT = process.env.PORT || 5000;
 
 const app = express();
@@ -25,6 +18,31 @@ app.use(cors({
   allowedHeaders: ['Content-Type', 'Authorization']
 }));
 app.use(express.json({ limit: '10kb' })); // Mitigate payload DOS
+
+// Serverless DB Connection Caching
+let isConnected = false;
+const connectDB = async () => {
+  if (isConnected || mongoose.connection.readyState === 1) {
+    return;
+  }
+  const MONGODB_URI = process.env.MONGODB_URI;
+  if (!MONGODB_URI) {
+    throw new Error('FATAL SECURITY CONFIGURATION ERROR: MONGODB_URI environment variable is missing.');
+  }
+  await mongoose.connect(MONGODB_URI);
+  isConnected = true;
+  console.log('✅ Connected securely to MongoDB database');
+};
+
+// Ensure Database is connected for all API requests
+app.use(async (req, res, next) => {
+  try {
+    await connectDB();
+    next();
+  } catch (err) {
+    next(err);
+  }
+});
 
 // Auth API Routes
 app.use('/api/auth', authRoutes);
@@ -51,15 +69,17 @@ app.use((err, req, res, next) => {
   });
 });
 
-// Connect to MongoDB
-mongoose.connect(MONGODB_URI)
-  .then(() => {
-    console.log('✅ Connected securely to MongoDB database');
-    app.listen(PORT, '0.0.0.0', () => {
-      console.log(`🚀 Auth Server running securely on 0.0.0.0:${PORT}`);
+// Local Standalone Execution (Non-Vercel)
+if (!process.env.VERCEL) {
+  connectDB()
+    .then(() => {
+      app.listen(PORT, '0.0.0.0', () => {
+        console.log(`🚀 Auth Server running securely on 0.0.0.0:${PORT}`);
+      });
+    })
+    .catch((err) => {
+      console.error('❌ Database Connection Failure:', err);
     });
-  })
-  .catch((err) => {
-    console.error('❌ Database Connection Failure');
-    process.exit(1);
-  });
+}
+
+export default app;
