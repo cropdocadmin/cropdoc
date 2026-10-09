@@ -5,8 +5,8 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "build": "vite build",
-    "render-build": "npm install && npm run build",
+    "build": "npm install && vite build",
+    "render-build": "npm install && vite build",
     "start": "node server/server.js",
     "lint": "oxlint",
     "preview": "vite preview"
