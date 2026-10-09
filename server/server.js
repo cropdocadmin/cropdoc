@@ -2,7 +2,12 @@ import 'dotenv/config';
 import express from 'express';
 import mongoose from 'mongoose';
 import cors from 'cors';
+import path from 'path';
+import { fileURLToPath } from 'url';
 import authRoutes from './routes/auth.js';
+
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
 
 const PORT = process.env.PORT || 5000;
 
@@ -19,7 +24,7 @@ app.use(cors({
 }));
 app.use(express.json({ limit: '10kb' })); // Mitigate payload DOS
 
-// Serverless DB Connection Caching
+// Serverless / Cloud DB Connection Caching
 let isConnected = false;
 const connectDB = async () => {
   if (isConnected || mongoose.connection.readyState === 1) {
@@ -55,9 +60,20 @@ app.get('/api/health', (req, res) => {
   });
 });
 
-// Generic 404 Handler
-app.use((req, res) => {
-  res.status(404).json({ success: false, message: 'Resource not found' });
+// Serve compiled static React frontend in Production / Render
+const distPath = path.join(__dirname, '../dist');
+app.use(express.static(distPath));
+
+// Fallback to React SPA index.html for non-API client routing
+app.get('*', (req, res, next) => {
+  if (req.path.startsWith('/api')) {
+    return res.status(404).json({ success: false, message: 'API endpoint not found' });
+  }
+  res.sendFile(path.join(distPath, 'index.html'), (err) => {
+    if (err) {
+      res.status(404).json({ success: false, message: 'Resource not found' });
+    }
+  });
 });
 
 // Global Error Handler (Prevents stack trace leaks to client in prod, logs error on server)
@@ -69,12 +85,12 @@ app.use((err, req, res, next) => {
   });
 });
 
-// Local Standalone Execution (Non-Vercel)
+// Local Standalone & Cloud Web Service Execution (Render / Heroku / Railway)
 if (!process.env.VERCEL) {
   connectDB()
     .then(() => {
       app.listen(PORT, '0.0.0.0', () => {
-        console.log(`🚀 Auth Server running securely on 0.0.0.0:${PORT}`);
+        console.log(`🚀 CropDOC Web Service running securely on port ${PORT}`);
       });
     })
     .catch((err) => {
