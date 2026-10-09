@@ -10,6 +10,7 @@ An AI-powered agricultural pathology platform designed for farmers to detect cro
 - **Plain Product Explanation & 3-Step Workflow**: Clear 1-2-3 guidance (Snap Photo ➔ AI Detect ➔ Get Treatment).
 - **Free vs. Premium Subscriptions**: Free tier with basic scanning + Premium tier (₹149/year) with 365-day tracking.
 - **Secure MERN Stack Backend**: JWT authentication, bcrypt password hashing, and Mongoose user persistence.
+- **Direct CropDOC App Access**: Integrated web app redirect to `https://cropdoc-app.ai.studio`.
 
 ---
 
