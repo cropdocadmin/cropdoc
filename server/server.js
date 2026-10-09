@@ -3,6 +3,7 @@ import express from 'express';
 import mongoose from 'mongoose';
 import cors from 'cors';
 import path from 'path';
+import fs from 'fs';
 import { fileURLToPath } from 'url';
 import authRoutes from './routes/auth.js';
 
@@ -62,19 +63,21 @@ app.get('/api/health', (req, res) => {
 
 // Serve compiled static React frontend in Production / Render
 const distPath = path.join(__dirname, '../dist');
-app.use(express.static(distPath));
+if (fs.existsSync(distPath)) {
+  app.use(express.static(distPath));
 
-// Fallback to React SPA index.html for non-API client routing
-app.get('*', (req, res, next) => {
-  if (req.path.startsWith('/api')) {
-    return res.status(404).json({ success: false, message: 'API endpoint not found' });
-  }
-  res.sendFile(path.join(distPath, 'index.html'), (err) => {
-    if (err) {
-      res.status(404).json({ success: false, message: 'Resource not found' });
+  // Fallback to React SPA index.html for non-API client routing (Express 5 compatible)
+  app.use((req, res, next) => {
+    if (req.path.startsWith('/api')) {
+      return res.status(404).json({ success: false, message: 'API endpoint not found' });
     }
+    res.sendFile(path.join(distPath, 'index.html'), (err) => {
+      if (err) {
+        next(err);
+      }
+    });
   });
-});
+}
 
 // Global Error Handler (Prevents stack trace leaks to client in prod, logs error on server)
 app.use((err, req, res, next) => {
